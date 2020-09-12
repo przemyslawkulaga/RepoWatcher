@@ -23,6 +23,7 @@
 		C4D6AF00250D42230090D22F /* BitBucketLinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFF250D42230090D22F /* BitBucketLinksModel.swift */; };
 		C4D6AF02250D43FA0090D22F /* BitBucketLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF01250D43FA0090D22F /* BitBucketLinkModel.swift */; };
 		C4D6AF04250D49D30090D22F /* UniversalRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF03250D49D30090D22F /* UniversalRepositoryModel.swift */; };
+		C4D6AF06250D55130090D22F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF05250D55130090D22F /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C4D6AEFF250D42230090D22F /* BitBucketLinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketLinksModel.swift; sourceTree = "<group>"; };
 		C4D6AF01250D43FA0090D22F /* BitBucketLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketLinkModel.swift; sourceTree = "<group>"; };
 		C4D6AF03250D49D30090D22F /* UniversalRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalRepositoryModel.swift; sourceTree = "<group>"; };
+		C4D6AF05250D55130090D22F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C45DF02E250D2631003017BD /* ViewController.swift */,
+				C4D6AF05250D55130090D22F /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				C4D6AEFC250D40CE0090D22F /* BitBucketRepositoryModel.swift in Sources */,
 				C45DF02B250D2631003017BD /* AppDelegate.swift in Sources */,
 				C4D6AF00250D42230090D22F /* BitBucketLinksModel.swift in Sources */,
+				C4D6AF06250D55130090D22F /* WebViewController.swift in Sources */,
 				C4D6AF02250D43FA0090D22F /* BitBucketLinkModel.swift in Sources */,
 				C45DF02D250D2631003017BD /* SceneDelegate.swift in Sources */,
 			);

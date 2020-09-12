@@ -14,6 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        repositoriesViewModel.downloadRepos()
+        //repositoriesViewModel.downloadRepos()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController")
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true)
     }
 }
