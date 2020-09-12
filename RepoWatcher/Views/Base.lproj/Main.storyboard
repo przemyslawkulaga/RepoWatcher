@@ -30,9 +30,21 @@
                     <view key="view" contentMode="scaleToFill" id="6MR-Dw-rUY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="iKR-aB-5Rf">
+                                <rect key="frame" x="197" y="451" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iKR-aB-5Rf" firstAttribute="centerY" secondItem="OFF-Vk-5Ns" secondAttribute="centerY" id="1DP-Ad-XlM"/>
+                            <constraint firstItem="iKR-aB-5Rf" firstAttribute="centerX" secondItem="OFF-Vk-5Ns" secondAttribute="centerX" id="olZ-Fo-8rg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OFF-Vk-5Ns"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="iKR-aB-5Rf" id="nEc-FZ-Omz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrh-B9-Nf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
