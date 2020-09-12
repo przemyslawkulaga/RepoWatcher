@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         repositoriesTableView.delegate = self
         repositoriesTableView.dataSource = self
         
-        repositoriesTableView.rowHeight = 136
+        repositoriesTableView.rowHeight = UITableView.automaticDimension
         repositoriesTableView.estimatedRowHeight = 136
     }
     
@@ -50,10 +50,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(with: repositoryData)
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
 }
 
