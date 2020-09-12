@@ -10,5 +10,5 @@ import Foundation
 
 struct GitHubOwnerModel: Codable {
     var login: String
-    var avatar_url: String
+    var avatar_url: String?
 }

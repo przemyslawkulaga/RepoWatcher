@@ -8,16 +8,28 @@
 
 import Foundation
 
+protocol ArticlesViewModelDelegate: class {
+    func reloadRepositoriesTableView()
+}
+
 final class RepositoriesViewModel {
     // MARK: Variables
     private var restManager = RestManager.shared
-    private var reposGitHub: [UniversalRepositoryModel] = []
+    var repos: [UniversalRepositoryModel] = []
+    
+    weak var delegate: ArticlesViewModelDelegate?
+    
+    // MARK: Inits
+    init(delegate: ArticlesViewModelDelegate) {
+        self.delegate = delegate
+    }
     
     // MARK: Functions
     func downloadRepos() {
-        restManager.getBitBucketArticles(completionHandler: { [weak self] data in
+        restManager.getArticles(completionHandler: { [weak self] data in
             guard let strongSelf = self, let data = data else { return }
-            strongSelf.reposGitHub = data
+            strongSelf.repos = data
+            strongSelf.delegate?.reloadRepositoriesTableView()
         })
     }
 }
