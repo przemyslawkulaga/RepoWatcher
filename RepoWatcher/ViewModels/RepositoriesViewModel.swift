@@ -11,13 +11,13 @@ import Foundation
 final class RepositoriesViewModel {
     // MARK: Variables
     private var restManager = RestManager.shared
-    private var reposGitHub: [GitHubRepositoryModel] = []
+    private var reposGitHub: [UniversalRepositoryModel] = []
     
     // MARK: Functions
     func downloadRepos() {
-        restManager.getBitBucketArticles(completionHandler: { [weak self] data in
+        restManager.getArticles(completionHandler: { [weak self] data in
             guard let strongSelf = self, let data = data else { return }
-            //strongSelf.reposGitHub = data
+            strongSelf.reposGitHub = data
         })
     }
 }

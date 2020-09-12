@@ -15,7 +15,7 @@ final class RestManager {
     private let urlBitBucket = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
     
     // MARK: Functions
-    func getArticles(completionHandler: @escaping ([GitHubRepositoryModel]?) -> Void) {
+    func getArticles(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
         guard let url = URL(string: urlGitHub) else {
             completionHandler(nil)
             return
@@ -33,7 +33,8 @@ final class RestManager {
 
             let decoder = JSONDecoder()
             if let reposData = try? decoder.decode(Array<GitHubRepositoryModel>.self, from: responseData) {
-                completionHandler(reposData)
+                let unversalRepoData = reposData.map { UniversalRepositoryModel(from: $0) }
+                completionHandler(unversalRepoData)
             } else {
                 completionHandler(nil)
             }
@@ -42,7 +43,7 @@ final class RestManager {
         task.resume()
     }
     
-    func getBitBucketArticles(completionHandler: @escaping (BitBucketRepositoriesModel?) -> Void) {
+    func getBitBucketArticles(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
         guard let url = URL(string: urlBitBucket) else {
             completionHandler(nil)
             return
@@ -61,12 +62,14 @@ final class RestManager {
             let decoder = JSONDecoder()
             do {
                 let reposData = try decoder.decode(BitBucketRepositoriesModel.self, from: responseData)
-                completionHandler(reposData)
+                let unversalRepoData = reposData.values?.compactMap {
+                    UniversalRepositoryModel(from: $0)
+                }
+                completionHandler(unversalRepoData)
             } catch let error {
                 print("[RestManager] \(error)")
                 completionHandler(nil)
             }
-            
         })
         
         task.resume()
