@@ -9,12 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    private var repositoriesViewModel = RepositoriesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        repositoriesViewModel.downloadRepos()
     }
-
-
 }
-
