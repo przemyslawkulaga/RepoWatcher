@@ -17,6 +17,11 @@
 		C45DF043250D2A77003017BD /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF042250D2A77003017BD /* GitHubRepositoryModel.swift */; };
 		C45DF045250D2BE3003017BD /* GitHubOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF044250D2BE3003017BD /* GitHubOwnerModel.swift */; };
 		C45DF048250D2CB5003017BD /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF047250D2CB5003017BD /* RepositoriesViewModel.swift */; };
+		C4D6AEFA250D40C00090D22F /* BitBucketRepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEF9250D40C00090D22F /* BitBucketRepositoriesModel.swift */; };
+		C4D6AEFC250D40CE0090D22F /* BitBucketRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFB250D40CE0090D22F /* BitBucketRepositoryModel.swift */; };
+		C4D6AEFE250D40D70090D22F /* BitBucketOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFD250D40D70090D22F /* BitBucketOwnerModel.swift */; };
+		C4D6AF00250D42230090D22F /* BitBucketLinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFF250D42230090D22F /* BitBucketLinksModel.swift */; };
+		C4D6AF02250D43FA0090D22F /* BitBucketLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF01250D43FA0090D22F /* BitBucketLinkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		C45DF042250D2A77003017BD /* GitHubRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryModel.swift; sourceTree = "<group>"; };
 		C45DF044250D2BE3003017BD /* GitHubOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubOwnerModel.swift; sourceTree = "<group>"; };
 		C45DF047250D2CB5003017BD /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		C4D6AEF9250D40C00090D22F /* BitBucketRepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketRepositoriesModel.swift; sourceTree = "<group>"; };
+		C4D6AEFB250D40CE0090D22F /* BitBucketRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketRepositoryModel.swift; sourceTree = "<group>"; };
+		C4D6AEFD250D40D70090D22F /* BitBucketOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketOwnerModel.swift; sourceTree = "<group>"; };
+		C4D6AEFF250D42230090D22F /* BitBucketLinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketLinksModel.swift; sourceTree = "<group>"; };
+		C4D6AF01250D43FA0090D22F /* BitBucketLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketLinkModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,11 @@
 			children = (
 				C45DF042250D2A77003017BD /* GitHubRepositoryModel.swift */,
 				C45DF044250D2BE3003017BD /* GitHubOwnerModel.swift */,
+				C4D6AEF9250D40C00090D22F /* BitBucketRepositoriesModel.swift */,
+				C4D6AEFB250D40CE0090D22F /* BitBucketRepositoryModel.swift */,
+				C4D6AEFD250D40D70090D22F /* BitBucketOwnerModel.swift */,
+				C4D6AEFF250D42230090D22F /* BitBucketLinksModel.swift */,
+				C4D6AF01250D43FA0090D22F /* BitBucketLinkModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,10 +207,15 @@
 			files = (
 				C45DF045250D2BE3003017BD /* GitHubOwnerModel.swift in Sources */,
 				C45DF02F250D2631003017BD /* ViewController.swift in Sources */,
+				C4D6AEFA250D40C00090D22F /* BitBucketRepositoriesModel.swift in Sources */,
 				C45DF043250D2A77003017BD /* GitHubRepositoryModel.swift in Sources */,
 				C45DF048250D2CB5003017BD /* RepositoriesViewModel.swift in Sources */,
+				C4D6AEFE250D40D70090D22F /* BitBucketOwnerModel.swift in Sources */,
 				C45DF040250D279B003017BD /* RestManager.swift in Sources */,
+				C4D6AEFC250D40CE0090D22F /* BitBucketRepositoryModel.swift in Sources */,
 				C45DF02B250D2631003017BD /* AppDelegate.swift in Sources */,
+				C4D6AF00250D42230090D22F /* BitBucketLinksModel.swift in Sources */,
+				C4D6AF02250D43FA0090D22F /* BitBucketLinkModel.swift in Sources */,
 				C45DF02D250D2631003017BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

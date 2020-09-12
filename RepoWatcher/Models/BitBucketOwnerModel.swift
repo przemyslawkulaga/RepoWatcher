@@ -1,5 +1,5 @@
 //
-//  GitHubOwnerModel.swift
+//  BitBucketOwnerModel.swift
 //  RepoWatcher
 //
 //  Created by Przemysław Kułaga on 12/09/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubOwnerModel: Codable {
-    var login: String
-    var avatar_url: String
+struct BitBucketOwnerModel: Codable {
+    var display_name: String
+    var links: BitBucketLinksModel?
 }

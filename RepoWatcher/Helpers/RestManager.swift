@@ -41,4 +41,34 @@ final class RestManager {
         
         task.resume()
     }
+    
+    func getBitBucketArticles(completionHandler: @escaping (BitBucketRepositoriesModel?) -> Void) {
+        guard let url = URL(string: urlBitBucket) else {
+            completionHandler(nil)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            guard let responseData = data else {
+                completionHandler(nil)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let reposData = try decoder.decode(BitBucketRepositoriesModel.self, from: responseData)
+                completionHandler(reposData)
+            } catch let error {
+                print("[RestManager] \(error)")
+                completionHandler(nil)
+            }
+            
+        })
+        
+        task.resume()
+    }
 }
