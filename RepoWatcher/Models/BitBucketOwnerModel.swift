@@ -10,5 +10,5 @@ import Foundation
 
 struct BitBucketOwnerModel: Codable {
     var display_name: String
-    var links: BitBucketLinksModel?
+    var links: BitBucketLinksModel
 }

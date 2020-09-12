@@ -11,5 +11,6 @@ import Foundation
 struct GitHubRepositoryModel: Codable {
     var name: String
     var description: String?
+    var html_url: String
     var owner: GitHubOwnerModel
 }

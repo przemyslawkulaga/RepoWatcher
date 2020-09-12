@@ -9,5 +9,5 @@
 import Foundation
 
 struct BitBucketLinkModel: Codable {
-    var href: String?
+    var href: String
 }

@@ -9,5 +9,6 @@
 import Foundation
 
 struct BitBucketLinksModel: Codable {
+    var html: BitBucketLinkModel
     var avatar: BitBucketLinkModel?
 }

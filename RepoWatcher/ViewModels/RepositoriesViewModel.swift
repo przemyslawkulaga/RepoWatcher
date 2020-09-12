@@ -15,7 +15,7 @@ final class RepositoriesViewModel {
     
     // MARK: Functions
     func downloadRepos() {
-        restManager.getArticles(completionHandler: { [weak self] data in
+        restManager.getBitBucketArticles(completionHandler: { [weak self] data in
             guard let strongSelf = self, let data = data else { return }
             strongSelf.reposGitHub = data
         })
