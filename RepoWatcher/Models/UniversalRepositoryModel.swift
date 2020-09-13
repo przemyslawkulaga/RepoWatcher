@@ -9,7 +9,7 @@
 import UIKit
 
 enum RepositoriesTypes {
-    case gitHub, bitBucket
+    case gitHub, bitBucket, nothing
 }
 
 struct UniversalRepositoryModel {

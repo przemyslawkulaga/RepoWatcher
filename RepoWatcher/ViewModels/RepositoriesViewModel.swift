@@ -22,6 +22,8 @@ final class RepositoriesViewModel {
             switch filterRepositoryType {
             case .gitHub, .bitBucket:
                 return downloadedRepositories.filter { $0.type == filterRepositoryType }
+            case .nothing:
+                return []
             default:
                 return downloadedRepositories
             }

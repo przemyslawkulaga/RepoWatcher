@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var repositoriesTableView: UITableView!
     
+    @IBOutlet weak var gitHubSwitch: UISwitch!
+    @IBOutlet weak var bitBucketSwitch: UISwitch!
     private var repositoriesViewModel: RepositoriesViewModel?
     
     override func viewDidLoad() {
@@ -37,6 +39,33 @@ class ViewController: UIViewController {
 //        let navController = UINavigationController(rootViewController: vc)
 //        self.present(navController, animated: true)
 //    }
+    
+    
+    
+    @IBAction func repositoriesSwtichValueChanged(_ sender: UISwitch) {
+        var filterType: RepositoriesTypes?
+        
+        switch sender {
+        case gitHubSwitch:
+            if sender.isOn {
+                filterType = bitBucketSwitch.isOn ? nil : .gitHub
+            } else {
+                filterType = bitBucketSwitch.isOn ? .bitBucket : .nothing
+            }
+        case bitBucketSwitch:
+            if sender.isOn {
+                filterType = gitHubSwitch.isOn ? nil : .bitBucket
+            } else {
+                filterType = gitHubSwitch.isOn ? .gitHub : .nothing
+            }
+        default:
+            break
+        }
+        
+        repositoriesViewModel?.filterRepositoryType = filterType
+        reloadRepositoriesTableView()
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

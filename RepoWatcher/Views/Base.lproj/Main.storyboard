@@ -16,21 +16,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-eO-ylS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L9-Lj-yvS">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-xA-8OK">
+                                                <rect key="frame" x="16" y="17.5" width="53.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-uH-A2x">
+                                                <rect key="frame" x="142" y="11.5" width="51" height="31"/>
+                                                <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="repositoriesSwtichValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="aoh-X4-FgC"/>
+                                                </connections>
+                                            </switch>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msc-aC-eSP">
+                                                <rect key="frame" x="206" y="0.0" width="1" height="54"/>
+                                                <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="ky6-do-tTy"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Msc-aC-eSP" secondAttribute="trailing" id="0WG-ov-gib"/>
+                                            <constraint firstItem="jBW-xA-8OK" firstAttribute="leading" secondItem="5L9-Lj-yvS" secondAttribute="leading" constant="16" id="2QZ-TO-nY4"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jsi-uH-A2x" secondAttribute="trailing" constant="16" id="4Qr-ht-iGf"/>
+                                            <constraint firstItem="Jsi-uH-A2x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jBW-xA-8OK" secondAttribute="trailing" constant="16" id="5AR-rO-eGF"/>
+                                            <constraint firstItem="jBW-xA-8OK" firstAttribute="centerY" secondItem="5L9-Lj-yvS" secondAttribute="centerY" id="5B1-5u-Ezc"/>
+                                            <constraint firstItem="Jsi-uH-A2x" firstAttribute="centerY" secondItem="jBW-xA-8OK" secondAttribute="centerY" id="DTp-1O-JfY"/>
+                                            <constraint firstItem="Msc-aC-eSP" firstAttribute="top" secondItem="5L9-Lj-yvS" secondAttribute="top" id="hB3-zA-j8N"/>
+                                            <constraint firstAttribute="bottom" secondItem="Msc-aC-eSP" secondAttribute="bottom" id="tlO-ft-hqc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-TO-jBj">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BitBucket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-MC-zfW">
+                                                <rect key="frame" x="16" y="17.5" width="73.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBH-42-Xbr">
+                                                <rect key="frame" x="142" y="11.5" width="51" height="31"/>
+                                                <color key="onTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="repositoriesSwtichValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZS5-H7-yuX"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="nBH-42-Xbr" firstAttribute="centerY" secondItem="ajh-MC-zfW" secondAttribute="centerY" id="A8X-hg-feV"/>
+                                            <constraint firstItem="nBH-42-Xbr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ajh-MC-zfW" secondAttribute="trailing" constant="16" id="JRn-N7-e7C"/>
+                                            <constraint firstItem="ajh-MC-zfW" firstAttribute="centerY" secondItem="1WE-TO-jBj" secondAttribute="centerY" id="KHL-Xk-w8b"/>
+                                            <constraint firstItem="ajh-MC-zfW" firstAttribute="leading" secondItem="1WE-TO-jBj" secondAttribute="leading" constant="16" id="h6d-QR-rDf"/>
+                                            <constraint firstAttribute="trailing" secondItem="nBH-42-Xbr" secondAttribute="trailing" constant="16" id="ln4-kJ-T0o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="fMa-wk-T7i"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVX-5b-JyP">
+                                <rect key="frame" x="0.0" y="98" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="A1e-dh-wdr"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qWO-Fi-GCk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qWO-Fi-GCk" secondAttribute="bottom" id="2Dg-iH-3Qr"/>
-                            <constraint firstItem="qWO-Fi-GCk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PKP-5w-9rg"/>
-                            <constraint firstItem="qWO-Fi-GCk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hVe-bF-ExB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qWO-Fi-GCk" secondAttribute="trailing" id="y5w-FJ-kJW"/>
+                            <constraint firstItem="wVX-5b-JyP" firstAttribute="bottom" secondItem="qWO-Fi-GCk" secondAttribute="top" id="3Ns-0T-Dwp"/>
+                            <constraint firstItem="dcM-eO-ylS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BkG-XX-DWr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wVX-5b-JyP" secondAttribute="trailing" id="D9D-GO-ghm"/>
+                            <constraint firstItem="wVX-5b-JyP" firstAttribute="top" secondItem="dcM-eO-ylS" secondAttribute="bottom" id="GCx-GA-HA7"/>
+                            <constraint firstItem="qWO-Fi-GCk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lft-YO-JfB"/>
+                            <constraint firstItem="wVX-5b-JyP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RPJ-n5-kvC"/>
+                            <constraint firstItem="dcM-eO-ylS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W0t-An-Uu1"/>
+                            <constraint firstItem="dcM-eO-ylS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h5a-RW-csk"/>
+                            <constraint firstItem="qWO-Fi-GCk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uP4-5T-dsU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bitBucketSwitch" destination="nBH-42-Xbr" id="WFt-S2-UOH"/>
+                        <outlet property="gitHubSwitch" destination="Jsi-uH-A2x" id="ReD-wy-5Qk"/>
                         <outlet property="repositoriesTableView" destination="qWO-Fi-GCk" id="9ua-wV-auX"/>
                     </connections>
                 </viewController>
