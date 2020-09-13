@@ -9,12 +9,15 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+final class WebViewController: UIViewController {
+    // MARK: IBOutlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var webView: WKWebView!
+    // MARK: Variables
+    private var webView: WKWebView!
     var repositoryData: UniversalRepositoryModel?
     
+    // MARK: ViewController Lifecycle
     override func loadView() {
         super.loadView()
         webView = WKWebView(frame: CGRect(x: view.frame.minX, y: view.frame.minY, width: view.frame.width, height: view.frame.height))
@@ -22,21 +25,25 @@ class WebViewController: UIViewController {
         view.addSubview(webView)
     }
     
-    func showActivityIndicator(_ show: Bool) {
-        show ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
-        webView.isHidden = show
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
+        
         guard let url = repositoryData?.url else { return }
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
     
+    // MARK: Functions
+    func showActivityIndicator(_ show: Bool) {
+        show ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        webView.isHidden = show
+    }
+    
     private func setupNavigationBar() {
+        self.navigationItem.title = repositoryData?.repoName
+        
         var barColor: UIColor?
         switch repositoryData?.type {
         case .gitHub:
@@ -46,17 +53,12 @@ class WebViewController: UIViewController {
         default:
             barColor = nil
         }
-        
         navigationController?.navigationBar.barTintColor = barColor
         navigationController?.navigationBar.barStyle = .black
         
-        self.navigationItem.title = repositoryData?.repoName
-        
         let backButton = UIBarButtonItem(title: "✕", style: .plain, target: self, action: #selector(backButtonTapped))
-        
         self.navigationItem.leftBarButtonItem = backButton
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-        
     }
     
     // MARK: Selectors
@@ -65,6 +67,7 @@ class WebViewController: UIViewController {
     }
 }
 
+// MARK: Extensions
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         showActivityIndicator(false)

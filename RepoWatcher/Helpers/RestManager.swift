@@ -11,6 +11,7 @@ import Foundation
 final class RestManager {
     // MARK: Variables
     static let shared = RestManager()
+    
     private let urlGitHub = "https://api.github.com/repositories"
     private let urlBitBucket = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
     
@@ -30,12 +31,14 @@ final class RestManager {
                 completionHandler(nil)
                 return
             }
-
+            
             let decoder = JSONDecoder()
-            if let reposData = try? decoder.decode(Array<GitHubRepositoryModel>.self, from: responseData) {
+            do {
+                let reposData = try decoder.decode(Array<GitHubRepositoryModel>.self, from: responseData)
                 let unversalRepoData = reposData.map { UniversalRepositoryModel(from: $0) }
                 completionHandler(unversalRepoData)
-            } else {
+            } catch let error {
+                print("[RestManager] \(error)")
                 completionHandler(nil)
             }
         })

@@ -6,16 +6,16 @@
 //  Copyright © 2020 Przemysław Kułaga. All rights reserved.
 //
 
-import Foundation
-
-protocol ArticlesViewModelDelegate: class {
+protocol RepositoriesViewModelDelegate: class {
     func reloadRepositoriesTableView()
 }
 
 final class RepositoriesViewModel {
     // MARK: Variables
     private var restManager = RestManager.shared
+    
     private var downloadedRepositories: [UniversalRepositoryModel] = []
+    
     var filterRepositoryType: RepositoriesTypes?
     var filteredRepositories: [UniversalRepositoryModel]  {
         get {
@@ -30,10 +30,10 @@ final class RepositoriesViewModel {
         }
     }
     
-    weak var delegate: ArticlesViewModelDelegate?
+    weak var delegate: RepositoriesViewModelDelegate?
     
     // MARK: Inits
-    init(delegate: ArticlesViewModelDelegate) {
+    init(delegate: RepositoriesViewModelDelegate) {
         self.delegate = delegate
     }
     
