@@ -15,7 +15,18 @@ protocol ArticlesViewModelDelegate: class {
 final class RepositoriesViewModel {
     // MARK: Variables
     private var restManager = RestManager.shared
-    var repos: [UniversalRepositoryModel] = []
+    private var downloadedRepositories: [UniversalRepositoryModel] = []
+    var filterRepositoryType: RepositoriesTypes?
+    var filteredRepositories: [UniversalRepositoryModel]  {
+        get {
+            switch filterRepositoryType {
+            case .gitHub, .bitBucket:
+                return downloadedRepositories.filter { $0.type == filterRepositoryType }
+            default:
+                return downloadedRepositories
+            }
+        }
+    }
     
     weak var delegate: ArticlesViewModelDelegate?
     
@@ -25,11 +36,20 @@ final class RepositoriesViewModel {
     }
     
     // MARK: Functions
-    func downloadRepos() {
-        restManager.getArticles(completionHandler: { [weak self] data in
-            guard let strongSelf = self, let data = data else { return }
-            strongSelf.repos = data
-            strongSelf.delegate?.reloadRepositoriesTableView()
+    func getRepositories() {
+        downloadedRepositories = []
+        
+        restManager.getGitHubRepositories(completionHandler: { [weak self] responseModel in
+            guard let strongSelf = self, let gitHubRepo = responseModel else { return }
+            
+            strongSelf.downloadedRepositories.append(contentsOf: gitHubRepo)
+            
+            strongSelf.restManager.getBitBucketRepositories(completionHandler: { [weak self] responseModel in
+                guard let strongSelf = self, let bitBucketRepo = responseModel else { return }
+                
+                strongSelf.downloadedRepositories.append(contentsOf: bitBucketRepo)
+                strongSelf.delegate?.reloadRepositoriesTableView()
+            })
         })
     }
 }

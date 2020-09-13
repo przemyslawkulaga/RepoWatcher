@@ -15,7 +15,7 @@ final class RestManager {
     private let urlBitBucket = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
     
     // MARK: Functions
-    func getArticles(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
+    func getGitHubRepositories(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
         guard let url = URL(string: urlGitHub) else {
             completionHandler(nil)
             return
@@ -43,7 +43,7 @@ final class RestManager {
         task.resume()
     }
     
-    func getBitBucketArticles(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
+    func getBitBucketRepositories(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void) {
         guard let url = URL(string: urlBitBucket) else {
             completionHandler(nil)
             return

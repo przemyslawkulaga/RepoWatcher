@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         setupTableView()
         repositoriesViewModel = RepositoriesViewModel(delegate: self)
-        repositoriesViewModel?.downloadRepos()
+        repositoriesViewModel?.getRepositories()
     }
     
     private func setupTableView() {
@@ -41,11 +41,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositoriesViewModel?.repos.count ?? 0
+        return repositoriesViewModel?.filteredRepositories.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath) as? RepositoryTableViewCell, let repositoryData = repositoriesViewModel?.repos[indexPath.row] else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath) as? RepositoryTableViewCell, let repositoryData = repositoriesViewModel?.filteredRepositories[indexPath.row] else { return UITableViewCell() }
 
         cell.setup(with: repositoryData)
         

@@ -25,8 +25,10 @@ class RepositoryTableViewCell: UITableViewCell {
         repositoryOwnerNameLabel.text = repo.ownerLogin
         
         if let image = repo.ownerAvatar {
+            repositoryOwnerAvatar.isHidden = false
             repositoryOwnerAvatar.image = image
         } else {
+            repositoryOwnerAvatar.isHidden = true
             repositoryOwnerAvatar.image = nil
         }
     }
