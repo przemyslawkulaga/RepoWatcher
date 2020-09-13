@@ -72,6 +72,7 @@
                 <outlet property="repositoryDescriptionLabel" destination="Dxw-Ke-HMc" id="h44-oS-1Hs"/>
                 <outlet property="repositoryNameLabel" destination="rB4-W6-nw9" id="NKi-vS-thm"/>
                 <outlet property="repositoryOwnerAvatar" destination="8qg-pz-Dad" id="bTy-hu-c6v"/>
+                <outlet property="repositoryOwnerAvatarWidth" destination="kFL-bM-kpe" id="9jU-oq-Ho6"/>
                 <outlet property="repositoryOwnerNameLabel" destination="La1-nK-Jga" id="3RE-ZW-C6C"/>
             </connections>
             <point key="canvasLocation" x="144.20289855072465" y="392.5271739130435"/>

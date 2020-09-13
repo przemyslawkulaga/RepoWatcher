@@ -13,6 +13,7 @@ final class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var repositoryNameLabel: UILabel!
     @IBOutlet weak var repositoryDescriptionLabel: UILabel!
     @IBOutlet weak var repositoryOwnerAvatar: UIImageView!
+    @IBOutlet weak var repositoryOwnerAvatarWidth: NSLayoutConstraint!
     @IBOutlet weak var repositoryOwnerNameLabel: UILabel!
     
     // MARK: Functions
@@ -20,7 +21,7 @@ final class RepositoryTableViewCell: UITableViewCell {
         repositoryOwnerAvatar.layer.cornerRadius = 25
         repositoryOwnerAvatar.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         repositoryOwnerAvatar.layer.borderWidth = 1
-        repositoryOwnerAvatar.isHidden = repo.ownerAvatar == nil
+        repositoryOwnerAvatarWidth.constant = repo.ownerAvatar == nil ? 0 : 50
         repositoryOwnerAvatar.image = repo.ownerAvatar
         
         repositoryOwnerNameLabel.text = repo.ownerLogin
