@@ -10,8 +10,6 @@ import Foundation
 
 final class RestManager {
     // MARK: Variables
-    static let shared = RestManager()
-    
     private let urlGitHub = "https://api.github.com/repositories"
     private let urlBitBucket = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
     

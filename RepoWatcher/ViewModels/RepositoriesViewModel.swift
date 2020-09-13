@@ -12,7 +12,7 @@ protocol RepositoriesViewModelDelegate: class {
 
 final class RepositoriesViewModel {
     // MARK: Variables
-    private var restManager = RestManager.shared
+    private var restManager = RestManager()
     
     private var downloadedRepositories: [UniversalRepositoryModel] = []
     
