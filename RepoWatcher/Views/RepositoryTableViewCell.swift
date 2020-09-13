@@ -16,6 +16,10 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var repositoryOwnerNameLabel: UILabel!
     
     public func setup(with repo: UniversalRepositoryModel) {
+        repositoryOwnerAvatar.layer.cornerRadius = 25
+        repositoryOwnerAvatar.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        repositoryOwnerAvatar.layer.borderWidth = 1
+
         repositoryNameLabel.text = repo.repoName
         repositoryDescriptionLabel.text = repo.repoDescription
         repositoryOwnerNameLabel.text = repo.ownerLogin
