@@ -16,7 +16,7 @@ struct UniversalRepositoryModel {
     var repoName: String
     var repoDescription: String?
     var ownerLogin: String
-    var url: String
+    var url: URL?
     var type: RepositoriesTypes
     var ownerAvatar: UIImage?
     
@@ -24,7 +24,7 @@ struct UniversalRepositoryModel {
         repoName = gitHubRepo.name
         repoDescription = gitHubRepo.description
         ownerLogin = gitHubRepo.owner.login
-        url = gitHubRepo.html_url
+        url = URL(string: gitHubRepo.html_url)
         type = .gitHub
         
         let avatarURL = gitHubRepo.owner.avatar_url
@@ -37,7 +37,7 @@ struct UniversalRepositoryModel {
         repoName = bitBucketRepo.name
         repoDescription = bitBucketRepo.description
         ownerLogin = bitBucketRepo.owner.display_name
-        url = bitBucketRepo.owner.links.html.href
+        url = URL(string: bitBucketRepo.owner.links.html.href)
         type = .bitBucket
         
         let avatarURL = bitBucketRepo.owner.links.avatar?.href

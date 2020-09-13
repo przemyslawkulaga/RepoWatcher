@@ -13,6 +13,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var webView: WKWebView!
+    var repositoryData: UniversalRepositoryModel?
     
     override func loadView() {
         super.loadView()
@@ -29,11 +30,38 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.green
-        
-        let url = URL(string: "https://www.cdaction.pl")!
+        setupNavigationBar()
+        guard let url = repositoryData?.url else { return }
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
+    }
+    
+    private func setupNavigationBar() {
+        var barColor: UIColor?
+        switch repositoryData?.type {
+        case .gitHub:
+            barColor = UIColor.black
+        case .bitBucket:
+            barColor = UIColor.blue
+        default:
+            barColor = nil
+        }
+        
+        navigationController?.navigationBar.barTintColor = barColor
+        navigationController?.navigationBar.barStyle = .black
+        
+        self.navigationItem.title = repositoryData?.repoName
+        
+        let backButton = UIBarButtonItem(title: "✕", style: .plain, target: self, action: #selector(backButtonTapped))
+        
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        
+    }
+    
+    // MARK: Selectors
+    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true)
     }
 }
 

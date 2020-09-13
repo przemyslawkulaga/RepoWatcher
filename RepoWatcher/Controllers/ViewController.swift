@@ -33,15 +33,6 @@ class ViewController: UIViewController {
         repositoriesTableView.estimatedRowHeight = 136
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController")
-//        let navController = UINavigationController(rootViewController: vc)
-//        self.present(navController, animated: true)
-//    }
-    
-    
-    
     @IBAction func repositoriesSwtichValueChanged(_ sender: UISwitch) {
         var filterType: RepositoriesTypes?
         
@@ -79,6 +70,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(with: repositoryData)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController, let repositoryData = repositoriesViewModel?.filteredRepositories[indexPath.row] else { return }
+        vc.repositoryData = repositoryData
+
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true)
     }
 }
 
