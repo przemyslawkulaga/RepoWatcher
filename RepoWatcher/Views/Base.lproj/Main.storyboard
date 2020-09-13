@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-C7-O6b">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-eO-ylS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="54"/>
                                 <subviews>
@@ -102,11 +105,13 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qWO-Fi-GCk" secondAttribute="bottom" id="2Dg-iH-3Qr"/>
                             <constraint firstItem="wVX-5b-JyP" firstAttribute="bottom" secondItem="qWO-Fi-GCk" secondAttribute="top" id="3Ns-0T-Dwp"/>
+                            <constraint firstItem="wrL-C7-O6b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7fl-XP-2s4"/>
                             <constraint firstItem="dcM-eO-ylS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BkG-XX-DWr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wVX-5b-JyP" secondAttribute="trailing" id="D9D-GO-ghm"/>
                             <constraint firstItem="wVX-5b-JyP" firstAttribute="top" secondItem="dcM-eO-ylS" secondAttribute="bottom" id="GCx-GA-HA7"/>
                             <constraint firstItem="qWO-Fi-GCk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lft-YO-JfB"/>
                             <constraint firstItem="wVX-5b-JyP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RPJ-n5-kvC"/>
+                            <constraint firstItem="wrL-C7-O6b" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Vli-AN-d1B"/>
                             <constraint firstItem="dcM-eO-ylS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W0t-An-Uu1"/>
                             <constraint firstItem="dcM-eO-ylS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h5a-RW-csk"/>
                             <constraint firstItem="qWO-Fi-GCk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uP4-5T-dsU"/>
@@ -114,6 +119,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="wrL-C7-O6b" id="57q-ix-EFq"/>
                         <outlet property="bitBucketSwitch" destination="nBH-42-Xbr" id="WFt-S2-UOH"/>
                         <outlet property="gitHubSwitch" destination="Jsi-uH-A2x" id="ReD-wy-5Qk"/>
                         <outlet property="repositoriesTableView" destination="qWO-Fi-GCk" id="9ua-wV-auX"/>

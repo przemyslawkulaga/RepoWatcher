@@ -22,7 +22,7 @@ class WebViewController: UIViewController {
         view.addSubview(webView)
     }
     
-    func showActivityIndicator(show: Bool) {
+    func showActivityIndicator(_ show: Bool) {
         show ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
         webView.isHidden = show
     }
@@ -67,14 +67,14 @@ class WebViewController: UIViewController {
 
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        showActivityIndicator(show: false)
+        showActivityIndicator(false)
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        showActivityIndicator(show: true)
+        showActivityIndicator(true)
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        showActivityIndicator(show: false)
+        showActivityIndicator(false)
     }
 }
