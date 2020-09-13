@@ -42,12 +42,18 @@ final class RepositoriesViewModel {
         downloadedRepositories = []
         
         restManager.getGitHubRepositories(completionHandler: { [weak self] responseModel in
-            guard let strongSelf = self, let gitHubRepo = responseModel else { return }
+            guard let strongSelf = self, let gitHubRepo = responseModel else {
+                self?.delegate?.reloadRepositoriesTableView()
+                return
+            }
             
             strongSelf.downloadedRepositories.append(contentsOf: gitHubRepo)
             
             strongSelf.restManager.getBitBucketRepositories(completionHandler: { [weak self] responseModel in
-                guard let strongSelf = self, let bitBucketRepo = responseModel else { return }
+                guard let strongSelf = self, let bitBucketRepo = responseModel else {
+                    self?.delegate?.reloadRepositoriesTableView()
+                    return
+                }
                 
                 strongSelf.downloadedRepositories.append(contentsOf: bitBucketRepo)
                 strongSelf.delegate?.reloadRepositoriesTableView()
