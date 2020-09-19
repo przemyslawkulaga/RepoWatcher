@@ -15,10 +15,14 @@
 		C45DF032250D2632003017BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45DF030250D2632003017BD /* Main.storyboard */; };
 		C45DF034250D2633003017BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45DF033250D2633003017BD /* Assets.xcassets */; };
 		C45DF037250D2633003017BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45DF035250D2633003017BD /* LaunchScreen.storyboard */; };
-		C45DF040250D279B003017BD /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF03F250D279B003017BD /* RestManager.swift */; };
+		C45DF040250D279B003017BD /* RestManagerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF03F250D279B003017BD /* RestManagerClient.swift */; };
 		C45DF043250D2A77003017BD /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF042250D2A77003017BD /* GitHubRepositoryModel.swift */; };
 		C45DF045250D2BE3003017BD /* GitHubOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF044250D2BE3003017BD /* GitHubOwnerModel.swift */; };
 		C45DF048250D2CB5003017BD /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DF047250D2CB5003017BD /* RepositoriesViewModel.swift */; };
+		C497AB8E25164A4400FAA65B /* RepoWatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497AB8D25164A4400FAA65B /* RepoWatcherTests.swift */; };
+		C497AB9B25164BBA00FAA65B /* MockedRestManagerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497AB9925164A8E00FAA65B /* MockedRestManagerClient.swift */; };
+		C497AB9C25164E4000FAA65B /* bitBucketMockedData.json in Resources */ = {isa = PBXBuildFile; fileRef = C497AB9525164A6400FAA65B /* bitBucketMockedData.json */; };
+		C497AB9D25164E4200FAA65B /* gitHubMockedData.json in Resources */ = {isa = PBXBuildFile; fileRef = C497AB9625164A6400FAA65B /* gitHubMockedData.json */; };
 		C4D6AEFA250D40C00090D22F /* BitBucketRepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEF9250D40C00090D22F /* BitBucketRepositoriesModel.swift */; };
 		C4D6AEFC250D40CE0090D22F /* BitBucketRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFB250D40CE0090D22F /* BitBucketRepositoryModel.swift */; };
 		C4D6AEFE250D40D70090D22F /* BitBucketOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AEFD250D40D70090D22F /* BitBucketOwnerModel.swift */; };
@@ -27,6 +31,16 @@
 		C4D6AF04250D49D30090D22F /* UniversalRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF03250D49D30090D22F /* UniversalRepositoryModel.swift */; };
 		C4D6AF06250D55130090D22F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6AF05250D55130090D22F /* WebViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C497AB9025164A4400FAA65B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C45DF01F250D2631003017BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C45DF026250D2631003017BD;
+			remoteInfo = RepoWatcher;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C433977B250D72BB00979775 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -39,10 +53,16 @@
 		C45DF033250D2633003017BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C45DF036250D2633003017BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C45DF038250D2633003017BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C45DF03F250D279B003017BD /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		C45DF03F250D279B003017BD /* RestManagerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManagerClient.swift; sourceTree = "<group>"; };
 		C45DF042250D2A77003017BD /* GitHubRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryModel.swift; sourceTree = "<group>"; };
 		C45DF044250D2BE3003017BD /* GitHubOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubOwnerModel.swift; sourceTree = "<group>"; };
 		C45DF047250D2CB5003017BD /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		C497AB8B25164A4400FAA65B /* RepoWatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepoWatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C497AB8D25164A4400FAA65B /* RepoWatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoWatcherTests.swift; sourceTree = "<group>"; };
+		C497AB8F25164A4400FAA65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C497AB9525164A6400FAA65B /* bitBucketMockedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bitBucketMockedData.json; sourceTree = "<group>"; };
+		C497AB9625164A6400FAA65B /* gitHubMockedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gitHubMockedData.json; sourceTree = "<group>"; };
+		C497AB9925164A8E00FAA65B /* MockedRestManagerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRestManagerClient.swift; sourceTree = "<group>"; };
 		C4D6AEF9250D40C00090D22F /* BitBucketRepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketRepositoriesModel.swift; sourceTree = "<group>"; };
 		C4D6AEFB250D40CE0090D22F /* BitBucketRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketRepositoryModel.swift; sourceTree = "<group>"; };
 		C4D6AEFD250D40D70090D22F /* BitBucketOwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketOwnerModel.swift; sourceTree = "<group>"; };
@@ -60,6 +80,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C497AB8825164A4400FAA65B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C45DF029250D2631003017BD /* RepoWatcher */,
+				C497AB8C25164A4400FAA65B /* RepoWatcherTests */,
 				C45DF028250D2631003017BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C45DF027250D2631003017BD /* RepoWatcher.app */,
+				C497AB8B25164A4400FAA65B /* RepoWatcherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +128,8 @@
 		C45DF03E250D278B003017BD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C45DF03F250D279B003017BD /* RestManager.swift */,
+				C45DF03F250D279B003017BD /* RestManagerClient.swift */,
+				C497AB9925164A8E00FAA65B /* MockedRestManagerClient.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +169,17 @@
 				C4D6AF05250D55130090D22F /* WebViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C497AB8C25164A4400FAA65B /* RepoWatcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				C497AB8D25164A4400FAA65B /* RepoWatcherTests.swift */,
+				C497AB9525164A6400FAA65B /* bitBucketMockedData.json */,
+				C497AB9625164A6400FAA65B /* gitHubMockedData.json */,
+				C497AB8F25164A4400FAA65B /* Info.plist */,
+			);
+			path = RepoWatcherTests;
 			sourceTree = "<group>";
 		};
 		C4E698A1250E1CAC00762A20 /* GitHub */ = {
@@ -182,6 +223,24 @@
 			productReference = C45DF027250D2631003017BD /* RepoWatcher.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C497AB8A25164A4400FAA65B /* RepoWatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C497AB9225164A4400FAA65B /* Build configuration list for PBXNativeTarget "RepoWatcherTests" */;
+			buildPhases = (
+				C497AB8725164A4400FAA65B /* Sources */,
+				C497AB8825164A4400FAA65B /* Frameworks */,
+				C497AB8925164A4400FAA65B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C497AB9125164A4400FAA65B /* PBXTargetDependency */,
+			);
+			name = RepoWatcherTests;
+			productName = RepoWatcherTests;
+			productReference = C497AB8B25164A4400FAA65B /* RepoWatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +253,10 @@
 				TargetAttributes = {
 					C45DF026250D2631003017BD = {
 						CreatedOnToolsVersion = 11.7;
+					};
+					C497AB8A25164A4400FAA65B = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = C45DF026250D2631003017BD;
 					};
 				};
 			};
@@ -211,6 +274,7 @@
 			projectRoot = "";
 			targets = (
 				C45DF026250D2631003017BD /* RepoWatcher */,
+				C497AB8A25164A4400FAA65B /* RepoWatcherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,10 +284,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C497AB9C25164E4000FAA65B /* bitBucketMockedData.json in Resources */,
 				C45DF037250D2633003017BD /* LaunchScreen.storyboard in Resources */,
 				C45DF034250D2633003017BD /* Assets.xcassets in Resources */,
+				C497AB9D25164E4200FAA65B /* gitHubMockedData.json in Resources */,
 				C433977C250D72BB00979775 /* RepositoryTableViewCell.xib in Resources */,
 				C45DF032250D2632003017BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C497AB8925164A4400FAA65B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,12 +310,13 @@
 				C45DF045250D2BE3003017BD /* GitHubOwnerModel.swift in Sources */,
 				C45DF02F250D2631003017BD /* RepositoriesViewController.swift in Sources */,
 				C4D6AEFA250D40C00090D22F /* BitBucketRepositoriesModel.swift in Sources */,
+				C497AB9B25164BBA00FAA65B /* MockedRestManagerClient.swift in Sources */,
 				C433977E250D74B100979775 /* RepositoryTableViewCell.swift in Sources */,
 				C4D6AF04250D49D30090D22F /* UniversalRepositoryModel.swift in Sources */,
 				C45DF043250D2A77003017BD /* GitHubRepositoryModel.swift in Sources */,
 				C45DF048250D2CB5003017BD /* RepositoriesViewModel.swift in Sources */,
 				C4D6AEFE250D40D70090D22F /* BitBucketOwnerModel.swift in Sources */,
-				C45DF040250D279B003017BD /* RestManager.swift in Sources */,
+				C45DF040250D279B003017BD /* RestManagerClient.swift in Sources */,
 				C4D6AEFC250D40CE0090D22F /* BitBucketRepositoryModel.swift in Sources */,
 				C45DF02B250D2631003017BD /* AppDelegate.swift in Sources */,
 				C4D6AF00250D42230090D22F /* BitBucketLinksModel.swift in Sources */,
@@ -252,7 +326,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C497AB8725164A4400FAA65B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C497AB8E25164A4400FAA65B /* RepoWatcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C497AB9125164A4400FAA65B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C45DF026250D2631003017BD /* RepoWatcher */;
+			targetProxy = C497AB9025164A4400FAA65B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C45DF030250D2632003017BD /* Main.storyboard */ = {
@@ -426,6 +516,46 @@
 			};
 			name = Release;
 		};
+		C497AB9325164A4400FAA65B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V26939G26U;
+				INFOPLIST_FILE = RepoWatcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peka.RepoWatcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepoWatcher.app/RepoWatcher";
+			};
+			name = Debug;
+		};
+		C497AB9425164A4400FAA65B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V26939G26U;
+				INFOPLIST_FILE = RepoWatcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peka.RepoWatcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepoWatcher.app/RepoWatcher";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -443,6 +573,15 @@
 			buildConfigurations = (
 				C45DF03C250D2633003017BD /* Debug */,
 				C45DF03D250D2633003017BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C497AB9225164A4400FAA65B /* Build configuration list for PBXNativeTarget "RepoWatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C497AB9325164A4400FAA65B /* Debug */,
+				C497AB9425164A4400FAA65B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

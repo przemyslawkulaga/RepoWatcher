@@ -1,5 +1,5 @@
 //
-//  RestManager.swift
+//  RestManagerClient.swift
 //  RepoWatcher
 //
 //  Created by Przemysław Kułaga on 12/09/2020.
@@ -8,7 +8,12 @@
 
 import Foundation
 
-final class RestManager {
+protocol RestManager {
+    func getGitHubRepositories(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void)
+    func getBitBucketRepositories(completionHandler: @escaping ([UniversalRepositoryModel]?) -> Void)
+}
+
+final class RestManagerClient: RestManager {
     // MARK: Variables
     private let urlGitHub = "https://api.github.com/repositories"
     private let urlBitBucket = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
