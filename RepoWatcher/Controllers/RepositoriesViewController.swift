@@ -25,7 +25,7 @@ final class RepositoriesViewController: UIViewController {
         
         setupTableView()
         
-        repositoriesViewModel = RepositoriesViewModel(delegate: self)
+        repositoriesViewModel = RepositoriesViewModel(restManager: RestManagerClient(), delegate: self)
         repositoriesViewModel?.getRepositories()
         
         showActivityIndicator(true)

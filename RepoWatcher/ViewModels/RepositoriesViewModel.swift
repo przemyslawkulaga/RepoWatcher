@@ -33,7 +33,8 @@ final class RepositoriesViewModel {
     weak var delegate: RepositoriesViewModelDelegate?
     
     // MARK: Inits
-    init(delegate: RepositoriesViewModelDelegate) {
+    init(restManager: RestManager, delegate: RepositoriesViewModelDelegate? = nil) {
+        self.restManager = restManager
         self.delegate = delegate
     }
     
